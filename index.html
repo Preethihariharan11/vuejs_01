@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head> 
+<body> 
+    <div id="myvue">
+        <h1>{{intern('Ducen')}}</h1><!--vue function with augments-->
+        <P>Hai This is {{name}} from {{college}} </p>
+        <p>Coimbatore</p>
+        <v-bind:img src="src"> <!--doesn't work on img attribute-->
+        <a v-bind:href="website">Universe of innovation</a><!--data binds-->
+        <input type="button" v-bind:value="website">  
+        <p v-html="img"></p> <!---vue html attribute from js file-->
+    </div>
+    <p>{{name}}</p><!--object is not-accessible outside the div of that instance-->
+    <div id="events">
+        <h1>We will look on {{events}}</h1>
+        <p>Experience is {{exp}}</p>
+        <button v-on:click="exp++">add</button><!---use vue click attribur with v-on...-->
+        <button @click="exp--">sub</button><!---use vue click attribur with @ instead of v-on-->
+        <button v-on:dblclick="add(10)">Addition</button><!---use vue double click attribur and fuction with parameter-->
+        <button v-on:dblclick="sub(10)">subtarction</button>
+        <button v-on:click.once="sub(2)">one time sub </button><!--event modifies by aloowing just once click-->
+        <a v-on:click.prevent="click" href="https://9to5universe.in">Here</a><!--event modifier wasnot applied-->
+        <div id="canvas" v-on:mousemove="coordinates">{{xaxis}},{{yaxis}}</div> <!---use vue move move attribur-->
+    </div>
+    <script src="app.js"></script>
+</body> 
+</html>
